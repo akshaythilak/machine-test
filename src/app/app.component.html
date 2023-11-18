@@ -1,0 +1,16 @@
+<form [formGroup]="newForm" (ngSubmit)="onSubmit()">
+  <div class="content-main">
+    <select name="title" id="" (change)="selectChange($event.target)">
+      <option *ngFor="let values of arrayTitles; index as i " value="{{values.id}}">{{values?.title}}</option>
+    </select>
+    <div>
+    <input type="text" (change)="inputChange($event.target)">
+    <button (click)="submitForm()">Add to form</button>
+  </div>
+  </div>
+  <div class="content-sub">
+    <div *ngFor="let values of arrayTitles; index as i ">{{values?.title}}
+    <!-- <div *ngFor="let value2 of values.children; index as i ">{{value2.title}}</div> -->
+  </div>
+  </div>
+</form>
